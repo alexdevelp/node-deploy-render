@@ -1,0 +1,25 @@
+### Deploy App Node no Render -  com DOCKER ###
+
+- Criar conta no Render:___________ (https://render.com/)
+- Criar projeto node:______________ npm init -y
+- Instalar dependencias:___________ npm install -D typescript @types/node tsx tsup
+
+    * tsx: é um comando CLI (alternativa para node) para executar TypeScript e ESM perfeitamente, 
+    em ambos commonjsos moduletipos de pacote.
+
+    * tsup: Agrupe sua biblioteca TypeScript sem configuração, desenvolvida por esbuild.
+
+- Rodar: npx tsc --init para crair as configurações do typescript
+- Trocar o target para es2020
+- Instalar fastify (https://www.fastify.io/): npm i fastify
+- Instalar prisma orm (https://www.prisma.io/): npm i prisma -D
+- Instalar prisma client: npm i @prisma/client 
+- Iniciar config do prisma: npx prisma init
+- Instalar imagem postgress docker:  
+    docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+- Setar env com caminho do banco
+- Rodar: npx prisma migrate dev
+- Confirmar migração:
+    √ Enter a name for the new migration: ... <create users>
+- Para visualisar no navegador: npx prisma studio
+- Instalar zod para fazermos as validações da request (https://github.com/colinhacks/zod)
